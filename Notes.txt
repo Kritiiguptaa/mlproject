@@ -1,0 +1,1 @@
+The __init__.py file has one main role: it tells Python that a directory should be treated as a package.

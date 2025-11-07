@@ -1,0 +1,2 @@
+# one-hot encoding, label-encoding etc etc
+# After ingestion, data is transformed (e.g., converting categorical features to numerical, handling encoding).

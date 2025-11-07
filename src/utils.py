@@ -1,0 +1,1 @@
+# For common functions used throughout the application, such as database connections or saving models.
