@@ -15,6 +15,12 @@ def get_requirements(file_path:str)->List[str]:
             requirements.remove(HYPHEN_E_DOT)
     return requirements
 
+# -e . is used by pip to install the current project in editable mode(install package "pip install -e .") and should not be included in 
+# install_requires, which is why it is removed before iteration in setup.py.
+
+# lets say i write -e . in requirements then -e . will search for setup.py to run but in setup.py we say to install all requirements
+# (thus will insatll -e . also which we do not want thus we write if -e . found remove it)
+
 setup(
     name='mlproject',
     version='0.0.1',

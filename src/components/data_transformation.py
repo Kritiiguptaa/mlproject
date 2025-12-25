@@ -20,6 +20,7 @@ from src.utils import save_object
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path=os.path.join('artifacts',"preprocessor.pkl")
+# PKL files are used to SAVE Python objects so you can reuse them later without retraining or recomputing.
 
 class DataTransformation:
     def __init__(self):
@@ -57,7 +58,8 @@ class DataTransformation:
 
             preprocessor=ColumnTransformer(
                 [
-                    ("num_pipeline",num_pipeline,numerical_columns),
+                    #('name', what it has to do, on which columns to apply)
+                    ("num_pipeline",num_pipeline,numerical_columns), 
                     ("cat_pipelines",cat_pipeline,categorical_columns)
                 ]
             )
@@ -104,6 +106,7 @@ class DataTransformation:
                 file_path=self.data_transformation_config.preprocessor_obj_file_path,
                 obj=preprocessing_obj
                 )
+            #It saves the PREPROCESSOR OBJECT (pipeline).
 
             return(
                 train_arr,

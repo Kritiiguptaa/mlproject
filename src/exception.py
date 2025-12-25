@@ -1,6 +1,6 @@
 # For custom exception handling.
 
-import sys
+import sys   #sys is a built-in Python module that gives access to the Python runtime environment.
 # provides access to system-specific parameters and functions
 from src.logger import logging
 import logging
@@ -29,3 +29,17 @@ class CustomException(Exception):
 #     except Exception as e:
 #         logging.info("Divide by Zero")
 #         raise CustomExecption(e,sys)
+
+
+#------------ Also on notion notes -------------------
+# Why is sys used in your code?
+# ⭐ MAIN REASON:
+# To get exception details like:
+# File name
+# Line number
+# Stack trace
+
+# This comes from:
+# sys.exc_info()
+
+# type, value, traceback = sys.exc_info()
